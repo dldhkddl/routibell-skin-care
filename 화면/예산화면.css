@@ -1,0 +1,8 @@
+.budget-purchase-link { display: block; margin: 12px auto 0; }
+.budget-recommendation { margin-top: 12px; }
+.budget-manager-lines p { margin: 7px 0; line-height: 1.5; }
+.budget-recommendation table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 12px; }
+.budget-recommendation th, .budget-recommendation td { padding: 10px 4px; border-bottom: 1px solid var(--line); text-align: left; }
+.budget-recommendation th:nth-child(2), .budget-recommendation td:nth-child(2) { text-align: right; }
+.budget-recommendation th:last-child, .budget-recommendation td:last-child { text-align: right; }
+.budget-recommendation .field-help { font-size: 11px; }

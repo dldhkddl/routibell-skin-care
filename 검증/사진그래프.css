@@ -1,0 +1,5 @@
+.explanation-preview.graph-mobile { max-width: 390px; }
+.graph-controls { padding: 14px; border: 1px solid #ead4e0; border-radius: 12px; background: #fff; display: grid; gap: 12px; }
+.graph-controls label { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-height: 44px; font-size: 13px; }
+.graph-controls select { padding: 10px; min-height: 44px; max-width: 100%; border: 1px solid #dccfda; background: white; border-radius: 8px; font: inherit; }
+.graph-controls input { accent-color: #a25c81; }

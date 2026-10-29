@@ -1,0 +1,7 @@
+{
+  "appId": "com.dldhkddl.skincare",
+  "appName": "루티벨",
+  "webDir": "dist",
+  "loggingBehavior": "none",
+  "backgroundColor": "#F7F8FA"
+}

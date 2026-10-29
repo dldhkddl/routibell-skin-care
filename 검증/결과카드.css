@@ -1,0 +1,5 @@
+.result-preview { max-width: 410px; padding: 12px 14px 24px; }
+.preview-notice { font-size: 10px; color: #757888; text-align: center; margin: 0 0 10px; }
+.preview-tools { display: flex; justify-content: center; gap: 8px; margin-bottom: 14px; }
+.preview-tools button { border: 1px solid #efdce5; border-radius: 8px; background: white; min-height: 34px; font-size: 10px; padding: 7px 10px; }
+#preview-status { font-size: 12px; }

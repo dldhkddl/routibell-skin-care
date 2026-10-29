@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">루티벨</string>
+    <string name="title_activity_main">루티벨</string>
+    <string name="package_name">com.dldhkddl.skincare</string>
+    <string name="custom_url_scheme">com.dldhkddl.skincare</string>
+</resources>

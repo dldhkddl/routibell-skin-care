@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>예산 화면 미리보기</title>
+  <link rel="stylesheet" href="../화면/글꼴.css">
+  <link rel="stylesheet" href="../화면/스타일.css">
+  <link rel="stylesheet" href="../화면/생활계획.css">
+  <link rel="stylesheet" href="../화면/체크인봇.css">
+  <link rel="stylesheet" href="../화면/베타화면.css">
+  <link rel="stylesheet" href="../화면/예산화면.css">
+  <style>
+    body { background: #faf9fa; }
+    .preview { max-width: 390px; min-height: 844px; margin: 0 auto; padding: 22px 18px 36px; background: white; }
+    .preview > h1 { margin: 0 0 22px; font-size: 23px; }
+    .preview .checkin-sheet { display: block; position: static; width: 100%; box-shadow: 0 8px 28px #17253818; border: 1px solid #f1dce5; }
+    .preview .checkin-sheet::before { margin-top: 10px; }
+    .preview .preview-dialog { width: 100%; padding: 22px; border: 1px solid #e8eaf1; border-radius: 18px; background: white; box-shadow: 0 8px 28px #17253818; }
+  </style>
+</head>
+<body><main class="preview" id="preview"></main>
+<script type="module">
+  import { EMPTY, today } from '../화면/계산.js';
+  import { createLifeUI } from '../화면/생활계획.js';
+  import { managerSheetState } from '../화면/체크인후.js';
+  import { renderBudgetForm, renderBudgetResult } from '../화면/예산화면.js';
+  import { PRODUCT_KINDS } from '../화면/화장대순서.js';
+  const sample=(kind,id,opened='2026-09-01',usageState='using')=>({id,title:`내 ${PRODUCT_KINDS[kind]}`,category:'cosmetic',kind,comfort:'unknown',status:'available',usageState,remaining:usageState==='low'?10:60,registeredAt:opened,opened,finishedAt:'',expires:'',memo:''});
+  const data=EMPTY(),kind=new URLSearchParams(location.search).get('case')??'inventory';
+  data.inventory=[sample('sunscreen','sun'),sample('cream','cream'),sample('cleanser','wash')];
+  if(kind==='result')data.budgets[today().slice(0,7)]=39000;
+  const root=document.getElementById('preview');
+  if(kind==='inventory'){
+    const ui=createLifeUI({state:()=>({data,effective:data,demo:false,storageError:false,busy:false}),dialog(){},toast(){},persist(){}});
+    root.innerHTML=`<h1>보유 제품·일정</h1>${ui.inventory()}`;
+  }else if(kind==='alert'){
+    const summary=managerSheetState(data,today(),12);
+    root.innerHTML=`<h1>매니저</h1><section class="checkin-sheet"><div class="checkin-sheet-head"><h2>매니저</h2></div><div class="manager-sheet"><p class="manager-first">${summary.first}</p><h3>오늘 할 일</h3><div class="manager-tasks">${summary.tasks.map(task=>`<button>${task.label} →</button>`).join('')}</div></div></section>`;
+  }else if(kind==='entry'){
+    root.innerHTML=`<h1>이번 달 예산</h1><section class="preview-dialog"><h2>이번 달 예산 정하기</h2>${renderBudgetForm('2026년 9월',null)}</section>`;
+  }else if(kind==='result'){
+    data.inventory[0].usageState='low';
+    data.inventory[1].usageState='low';
+    data.inventory[2].usageState='low';
+    root.innerHTML=`<h1>이번 달 예산</h1>${renderBudgetResult(data,today().slice(0,7))}`;
+  }
+</script>
+</body>
+</html>

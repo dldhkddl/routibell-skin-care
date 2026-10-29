@@ -1,0 +1,73 @@
+.compact-ui .main-content { padding-top: 8px; }
+.compact-ui .page-head { margin-bottom: 20px; }
+.compact-ui .main-content p, .compact-ui .main-content li { font-size: 12px; line-height: 1.6; }
+.compact-ui .card-copy { margin: 10px 0; font-size: 12px; color: #65738a; }
+.card-details { margin: 10px 0; font-size: 12px; color: #69788d; }
+.card-details > summary { min-height: 36px; padding: 8px 0; cursor: pointer; font-size: 12px; }
+.card-details > div { padding: 6px 0 4px; }
+.card-details p { margin: 7px 0; line-height: 1.7; }
+.compact-ui .btn.primary:not(.screen-primary) { background: #fff; color: #43516a; border: 1px solid #e3e7ef; box-shadow: none; }
+.compact-ui [data-main-action]:not(.screen-primary) { background: #fff; color: #43516a; box-shadow: none; }
+.compact-ui .screen-primary { display: flex; justify-content: center; align-items: center; gap: 8px; width: 100%; min-height: 48px; padding: 12px 16px; border: 0; border-radius: 14px; background: linear-gradient(110deg,#ff427c,#fa2b6d); color: #fff; font-weight: 750; box-shadow: 0 5px 16px #fa3d7420; }
+.compact-ui .btn.primary.screen-primary, .compact-ui [data-main-action].screen-primary { background: linear-gradient(110deg,#e01e60,#d11b55); color: #fff; }
+.compact-ui .photo-result-details > summary.screen-primary { width: calc(100% - 32px); color: #fff; }
+.compact-ui .add-record-button.screen-primary { width: 48px; flex-shrink: 0; padding: 12px; border-radius: 50%; }
+.compact-ui .result-metric > strong { font-size: 22px; }
+.compact-ui .result-metric > .result-metric-missing { font-size: 11px; }
+.compact-ui .result-total > strong { font-size: 42px; }
+.compact-ui .monthly-balance > strong, .compact-ui .care-budget-number > strong, .compact-ui .monthly-plan-summary > strong { font-size: clamp(25px,7vw,36px); letter-spacing: -1px; font-variant-numeric: tabular-nums; }
+.compact-ui .monthly-metrics > article > strong { font-size: 32px; font-variant-numeric: tabular-nums; }
+.compact-ui .monthly-metrics { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.compact-ui .monthly-metrics > article:last-child { grid-column: 1 / -1; }
+.number-card { min-width: 0; display: flex; flex-direction: column; gap: 4px; padding: 15px 14px; border-radius: 17px; background: linear-gradient(145deg,#fff1f6,#fff); border: 1px solid #f6e7ef; }
+.number-card > span { font-size: 11px; color: #708095; }
+.number-card > strong { font-size: clamp(26px,7vw,36px); font-weight: 800; letter-spacing: -1px; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.number-card > strong small { font-size: 13px; margin-left: 4px; letter-spacing: 0; }
+.number-card > small { font-size: 10px; color: #7a879a; }
+.home-numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 20px; }
+.home-numbers .number-card:nth-child(2) { background: linear-gradient(145deg,#edf7ff,#fff); border-color: #e3edf7; }
+.home-numbers > :only-child { grid-column: 1 / -1; }
+.metric-prompt { margin: -6px 0 16px; text-align: right; }
+.metric-prompt .text-link { min-height: 44px; padding: 8px 0; font-size: 12px; font-weight: 550; color: #67758c; }
+.live-report .metric-prompt { margin: 0; }
+.compact-ui .monthly-metrics > article:last-child:nth-child(2) { grid-column: auto; }
+.monthly-calendar .not-tracked { background: #fafafa; }
+.monthly-calendar .not-tracked i { border: 0; color: #a4a4af; }
+.compact-ui .checkin-home { position: relative; border-color: #f7d8e4; background: linear-gradient(135deg,#fff0f6,#fff9fb 70%); }
+.compact-ui .checkin-avatar, .compact-ui .checkin-character { width: 64px; height: 64px; }
+.compact-ui .checkin-chat-head { gap: 14px; }
+.compact-ui .checkin-chat-head strong { color: #263147; font-size: 15px; }
+.compact-ui .checkin-done .checkin-avatar, .compact-ui .checkin-done .checkin-character { width: 38px; height: 38px; }
+.compact-ui .checkin-launcher .checkin-character { width: 45px; height: 45px; }
+.compact-ui .checkin-question-count { font-size: 10px; color: #9b6a7c; }
+.compact-ui .checkin-help { font-size: 11px; }
+.compact-ui .care-home-heading h2 { font-size: 19px; }
+.compact-ui .care-home .care-daily { margin: 14px 0 0; }
+.compact-ui .daily-button { background: #fff; border-color: #e8e7ee; }
+.compact-ui .daily-button.done { background: #fff3f7; border-color: #f8cddd; }
+.compact-ui .care-routine li { padding-bottom: 12px; }
+.compact-ui .care-routine .care-product { font-size: 11px; }
+.compact-ui .care-routine .card-details { margin: 0; }
+.compact-ui .care-routine .card-details > summary { min-height: 30px; font-size: 10px; }
+.compact-ui .care-week > .number-card { margin: 14px 0; }
+.compact-ui .monthly-home h2 { font-size: 17px; }
+.compact-ui .monthly-home-numbers { display: flex; gap: 20px; margin: 12px 0; }
+.monthly-home-numbers > span { color: #718096; font-size: 10px; display: grid; gap: 2px; }
+.monthly-home-numbers strong { font-size: 25px; color: #1d2b41; font-weight: 800; }
+.monthly-check-rate { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+.monthly-check-rate > strong { font-size: 42px; letter-spacing: -1px; }
+.monthly-check-rate > strong small { font-size: 16px; margin-left: 3px; }
+.monthly-check-rate > span { font-size: 11px; color: #708095; }
+.compact-ui .result-thumbnails { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin: 12px 0 0; }
+.result-thumbnail { min-width: 0; border: 1px solid #f0e6ec; background: #faf7f9; border-radius: 12px; overflow: hidden; padding: 0; font: inherit; cursor: pointer; }
+.result-thumbnail img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.result-thumbnail span { display: block; font-size: 10px; color: #66748a; padding: 6px 2px; }
+.result-warning-list { padding: 0 16px; }
+.result-warning-list p, .compact-ui .guidance-alert, .compact-ui .care-safety-summary { font-size: 11px; line-height: 1.6; color: #9b3758; margin: 6px 0; }
+.compact-ui .photo-guidance { padding: 14px; }
+.compact-ui .photo-guidance h3 { font-size: 16px; margin: 8px 0; }
+.compact-ui .trend-score { font-size: 23px; }
+.compact-ui .monthly-feedback-counts { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
+.monthly-feedback-counts li { border-radius: 10px; background: #f6f8fb; padding: 7px 10px; font-size: 11px; }
+.monthly-feedback-counts b { font-size: 18px; margin-left: 6px; }
+@media (max-width:360px) { .home-numbers { grid-template-columns: 1fr; } .compact-ui .checkin-avatar,.compact-ui .checkin-character { width: 52px; height: 52px; } .compact-ui .monthly-metrics { grid-template-columns: 1fr; } }

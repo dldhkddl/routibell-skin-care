@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>월간 리포트 · 모바일 배치 확인</title>
+  <style>
+    body { margin: 0; padding: 16px; background: #eeeaf0; color: #19263c; font: 13px/1.5 'Malgun Gothic', sans-serif; }
+    header { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+    button, a { font: inherit; color: inherit; background: white; border: 1px solid #d5cad3; border-radius: 7px; padding: 10px 13px; cursor: pointer; }
+    button[aria-pressed="true"] { border-color: #cc3b71; background: #fff0f6; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #ad2856; outline-offset: 3px; }
+    output { text-align: center; display: block; margin-bottom: 10px; font-size: 11px; }
+    iframe { display: block; width: 390px; height: calc(100vh - 140px); min-height: 450px; border: 1px solid #d5cad3; border-radius: 15px; margin: auto; background: white; }
+  </style>
+</head>
+<body>
+  <header><strong>화면 폭 확인</strong><button type="button" data-width="320" aria-pressed="false">320px</button><button type="button" data-width="390" aria-pressed="true">390px</button><a href="./월간리포트.html">리포트 원본</a></header>
+  <output aria-live="polite">배치 확인 중</output>
+  <iframe title="샘플 월간 리포트 모바일 미리보기" src="./월간리포트.html"></iframe>
+  <script type="module">
+    const frame = document.querySelector('iframe');
+    const buttons = [...document.querySelectorAll('button[data-width]')];
+    function inspectLayout() {
+      const frameDocument = frame.contentDocument;
+      if (!frameDocument?.querySelector('h1')) return;
+      const root = frameDocument.documentElement;
+      const overflowing = [...frameDocument.querySelectorAll('main section, .metric-grid article, .report-card, .next-budget')].filter(element => element.scrollWidth > element.clientWidth + 1);
+      const names = overflowing.map(element => element.id || element.className || element.tagName).join(', ');
+      document.querySelector('output').textContent = `본문 ${root.clientWidth}px / 콘텐츠 ${root.scrollWidth}px / 넘치는 카드 ${overflowing.length}개${names ? ` (${names})` : ''}`;
+    }
+    frame.addEventListener('load', () => {
+      inspectLayout();
+      new ResizeObserver(inspectLayout).observe(frame.contentDocument.documentElement);
+    });
+    function showSection() {
+      const section = location.hash.slice(1);
+      const allowed = ['monthly-summary', 'photo-observation', 'routine-review', 'next-month'].includes(section);
+      const source = `./월간리포트.html${allowed ? `#${section}` : ''}`;
+      if (frame.getAttribute('src') !== source) frame.src = source;
+    }
+    window.addEventListener('hashchange', showSection);
+    showSection();
+    buttons.forEach(button => button.addEventListener('click', () => {
+      const width = Number(button.dataset.width);
+      if (![320, 390].includes(width)) return;
+      frame.style.width = `${width}px`;
+      buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      inspectLayout();
+    }));
+  </script>
+</body>
+</html>

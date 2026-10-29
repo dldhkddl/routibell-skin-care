@@ -1,0 +1,29 @@
+body { background:#f7f0f3; }
+#recommendation-preview { max-width:390px; min-height:100vh; padding:0 0 24px; }
+.review-header { min-height:60px; padding:17px 20px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #f0e4e9; }
+.review-header strong { font-size:17px; letter-spacing:-.04em; color:#f33175; }
+.review-header span { color:#65738a; font-size:12px; }
+.review-body { padding:20px; }
+.review-body h1 { font-size:26px; margin:8px 0 4px; }
+.review-note { display:inline-block; margin:0; padding:5px 10px; border-radius:20px; background:#f6edf1; color:#765b69; font-size:11px; }
+.review-strategy { margin:0 0 8px; color:#59677d; font-size:13px; }
+.review-body .photo-guidance { margin:16px 0; }
+.review-body .photo-guidance h3 { margin:4px 0 14px; }
+.review-focus,.review-plan { padding:17px; border:1px solid #efcfde; border-radius:14px; margin:16px 0; }
+.review-focus h2,.review-plan h2 { font-size:17px; margin:0 0 12px; }
+.review-focus>div { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.review-focus>div p { display:flex; align-items:center; justify-content:space-between; margin:0; padding:10px; background:#fff4f8; border-radius:9px; font-size:12px; }
+.review-focus>div strong { font-size:18px; color:#e82e6d; }
+.review-empty { font-size:13px; color:#59677d; margin:0; }
+.review-body .photo-comparison { margin:16px 0; padding:17px; border:1px solid #e8d6df; border-radius:14px; }
+.review-body .photo-comparison h3 { font-size:17px; }
+.review-body .photo-comparison ul { margin:0; padding:0; }
+.review-body .photo-comparison li { padding:8px 0; }
+.review-routine { margin-top:12px; }
+.review-routine h3 { font-size:13px; color:#9d3c62; }
+.review-routine ol { margin:6px 0 0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:7px; }
+.review-routine li { padding:7px 9px; background:#fff2f6; border-radius:9px; font-size:12px; }
+.review-routine small { display:block; color:#7d8998; font-size:10px; }
+.review-next { font-size:11px; color:#708098; }
+.review-next { margin:18px 0; }
+.review-error { margin:20px; color:#8c3050; }

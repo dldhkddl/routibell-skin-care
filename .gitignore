@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.검토/
+android/.gradle/
+android/local.properties
+android/app/build/
+*.keystore
+*.jks
+.env*
+.계정자료/
+.검증자료/
+
+_to_delete/
+Claude outputs/
+보관/제품사진/

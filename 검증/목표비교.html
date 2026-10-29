@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>목표 화면 비교</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 32px 24px; background: #f3f4f7; color: #17243b; font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; }
+    h1 { margin: 0 0 10px; font-size: 25px; }
+    p { color: #65728a; font-size: 13px; line-height: 1.7; }
+    .comparison { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
+    section { width: 390px; max-width: 100%; }
+    h2 { margin: 12px 0; font-size: 16px; }
+    .reference { width: 390px; max-width: 100%; height: 940px; background: #fff url('/보관/목업원본.png') -458px -320px / 2624px 2398px no-repeat; }
+    iframe { display: block; width: 100%; height: 1060px; border: 0; background: #fff; }
+  </style>
+</head>
+<body>
+  <h1>목표 화면 비교</h1>
+  <p>왼쪽은 제공된 목업을 확대했고, 오른쪽은 실제 앱입니다.<br>목표 사진은 고해상도로 새로 생성했으며, 기존 목표 항목과 저장 방식은 유지합니다.</p>
+  <div class="comparison">
+    <section><h2>제공 목업</h2><div class="reference" role="img" aria-label="제공된 목업의 목표 설정 화면 확대"></div></section>
+    <section><h2>현재 구현 · 실제 화면</h2><iframe src="/#goals" title="현재 구현된 목표 설정 화면"></iframe></section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>사진 그래프 확인 · __APP_NAME__</title></head>
+<body>
+  <main class="explanation-preview" id="graph-preview">
+    <header><p>샘플 화면입니다 · 가상 기록만 사용하며 사진 전송·외부 요청·계정 저장은 하지 않아요.</p><h1>내 기록으로 보는 점수 추이</h1></header>
+    <div class="graph-controls"><label>검증 상황<select id="graph-scenario"><option value="first">첫 분석</option><option value="matched">같은 조건의 누적 기록</option><option value="unmatched">촬영 조건 미확인</option><option value="version">분석 버전 다름</option><option value="missing">이번 항목 미분석</option><option value="failed">점수 해석 실패</option><option value="skin">피부 타입 3영역</option><option value="all">16개 항목</option><option value="uncertain">번들거림 기록 · 불편함 미확인</option></select></label><label><input type="checkbox" id="graph-mobile" checked> 모바일 너비로 보기</label></div>
+    <div id="graph-output"></div>
+  </main>
+  <script type="module" src="./사진그래프.js"></script>
+</body>
+</html>

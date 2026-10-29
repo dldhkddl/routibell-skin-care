@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>매니저 질문 화면 확인</title>
+  <link rel="stylesheet" href="/화면/글꼴.css">
+  <link rel="stylesheet" href="/화면/스타일.css">
+  <link rel="stylesheet" href="/화면/체크인봇.css">
+  <style>
+    body { margin: 0; background: #f7f6f7; }
+    .preview { box-sizing: border-box; width: 390px; min-height: 844px; margin: auto; padding: 25px 20px; background: #fff; }
+    .preview h1 { font-size: 22px; }
+    .preview p { color: #5d6779; }
+    dialog::backdrop { background: #18263c66; }
+  </style>
+</head>
+<body>
+  <main class="preview"><strong>루티벨</strong><h1 id="title">매니저 질문</h1><p>오늘의 루틴과 기록을 함께 살펴볼게요.</p><div id="checkin-assistant"></div></main>
+  <dialog id="checkin-sheet" class="checkin-sheet" aria-labelledby="checkin-sheet-title"></dialog>
+  <script type="module">
+    import { EMPTY, today } from '../화면/계산.js';
+    import { createCheckinUI } from '../화면/체크인봇.js';
+
+    const scenario=new URLSearchParams(location.search).get('case')??'sheet';
+    const date=today(),data=EMPTY();
+    data.skinCare.profile={feel:'dry',concerns:['dryness'],sensitivity:'rare',discomfort:'no',priority:'comfort',budget:null,updatedAt:date};
+    if(scenario!=='empty'){
+      data.inventory=['cleanser','cream','sunscreen'].map((kind,index)=>({id:kind,title:`내 ${kind}`,category:'cosmetic',kind,comfort:'comfortable',status:'available',usageState:kind==='sunscreen'?'low':'using',remaining:kind==='sunscreen'?10:60,registeredAt:date,opened:date,expires:'',memo:''}));
+      data.skinCare.selection={cleanser:'cleanser',cream:'cream',sunscreen:'sunscreen'};
+      data.skinCare.checkins=[{date,adherence:'yes',feeling:'comfortable',feel:'dry',product:null,memo:''}];
+      data.skinCare.observation={provider:'youcam',version:'v2.1',date,focus:'moisture',actions:['moisture'],scores:{moisture:56}};
+    }
+    const names={sheet:'매니저 시트 · 물어보기',bot:'떠다니는 봇 · 물어보기',routine:'답변 · 루틴',skin:'답변 · 피부',empty:'답변 · 기록 없음'};
+    document.getElementById('title').textContent=names[scenario]??names.sheet;
+    const ui=createCheckinUI({state:()=>({data,identity:'preview:questions',demo:false,busy:false,storageError:false}),today:()=>date,hour:()=>11,render(){},persist:async()=>true,navigate(){},subscription:async()=>({access:{remaining:1,subscriptionRemaining:0,oneTimeRemaining:0,freeTrialRemaining:1,trialLocked:false}})});
+    ui.sync('records');
+    document.getElementById('checkin-launcher').click();
+    const question={routine:'today',skin:'skinNow',empty:'order'}[scenario];
+    if(scenario==='skin')document.querySelector('[data-manager-tab="skin"]').click();
+    if(question)document.querySelector(`[data-manager-question="${question}"]`).click();
+  </script>
+</body>
+</html>

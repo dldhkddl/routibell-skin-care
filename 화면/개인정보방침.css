@@ -1,0 +1,15 @@
+.privacy-policy{max-width:720px;margin:0 auto;padding:24px 18px 60px;color:#142342;background:#fff;border-radius:22px}
+.privacy-policy h1{font-size:1.75rem;margin:12px 0 18px}
+.privacy-policy h2{font-size:1.1rem;margin:0 0 12px}
+.privacy-policy section{border-top:1px solid #f3dce4;padding:20px 0}
+.privacy-policy p{line-height:1.65;margin:0 0 10px}
+.privacy-policy dl{margin:0}
+.privacy-policy dl div{padding:10px 0;border-bottom:1px solid #f5edf0}
+.privacy-policy dt{font-weight:700;margin-bottom:4px}
+.privacy-policy dd{margin:0;line-height:1.55;overflow-wrap:anywhere}
+.privacy-policy .privacy-draft{display:inline-block;padding:7px 11px;border-radius:12px;background:#fff0f5;color:#c41d57;font-weight:700}
+.photo-transfer-list{margin:14px 0 0}
+.photo-transfer-list div{padding:9px 0;border-bottom:1px solid #f3dce4}
+.photo-transfer-list dt{font-weight:700}
+.photo-transfer-list dd{margin:4px 0 0;line-height:1.5;overflow-wrap:anywhere}
+button[data-view="wishes"]{display:none!important}

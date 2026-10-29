@@ -1,0 +1,80 @@
+.live-report { display: grid; gap: 18px; }
+.monthly-hero { padding: 24px 21px; background: linear-gradient(135deg,#fff2f7,#fffafc); border: 1px solid #f3d8e4; border-radius: 17px; }
+.monthly-eyebrow { display: block; color: #b5315e; font-size: 11px; margin-bottom: 10px; }
+.monthly-hero h2 { font-size: 30px; line-height: 1.35; letter-spacing: -.06em; }
+.monthly-hero > strong { display: block; margin-top: 22px; font-size: 16px; }
+.monthly-hero p { margin: 10px 0 0; font-size: 12px; color: #716879; line-height: 1.8; }
+.monthly-metrics { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; }
+.monthly-metrics article { display: flex; flex-direction: column; gap: 8px; padding: 14px 9px; border: 1px solid var(--line); border-radius: 11px; min-width: 0; }
+.monthly-metrics article > span { font-size: 10px; color: var(--muted); }
+.monthly-metrics article > strong { font-size: 18px; letter-spacing: -.06em; overflow-wrap: anywhere; }
+.monthly-metrics small { font-size: 10px; color: var(--muted); font-weight: 400; }
+.monthly-card { padding: 20px 17px; border: 1px solid var(--line); border-radius: 15px; min-width: 0; }
+.monthly-card .section-head { margin-bottom: 14px; }
+.monthly-card h2 { font-size: 18px; }
+.monthly-card h2 .icon { width: 20px; height: 20px; margin-right: 4px; color: #d43968; }
+.monthly-card h3 { font-size: 14px; }
+.monthly-card p { font-size: 12px; line-height: 1.85; margin: 9px 0; color: #67758c; }
+.monthly-photo-dates { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; margin: 17px 0 10px; }
+.monthly-photo-dates > div { display: flex; flex-direction: column; gap: 8px; padding: 15px 11px; border-radius: 9px; background: #f7f8fb; }
+.monthly-photo-dates > div:last-child { background: #fff0f5; }
+.monthly-photo-dates span { font-size: 10px; color: var(--muted); }
+.monthly-photo-dates strong { font-size: 13px; }
+.monthly-table { width: 100%; border-collapse: collapse; font-size: 12px; font-variant-numeric: tabular-nums; }
+.monthly-table caption { text-align: left; font-size: 10px; color: var(--muted); padding: 10px 0; }
+.monthly-table th, .monthly-table td { text-align: right; padding: 12px 4px; border-bottom: 1px solid var(--line); }
+.monthly-table th { font-weight: 550; }
+.monthly-table th:first-child { text-align: left; }
+.monthly-table thead th { font-size: 10px; color: var(--muted); }
+.monthly-connection { padding: 16px; background: #fff4f8; border-radius: 10px; margin-top: 19px; }
+.monthly-connection > strong { font-size: 13px; }
+.monthly-details { margin-top: 15px; border-top: 1px solid var(--line); padding-top: 6px; }
+.monthly-details summary { min-height: 44px; display: flex; align-items: center; font-size: 12px; color: #55687f; }
+.monthly-details summary::after { content: '+'; margin-left: auto; padding-left: 12px; }
+.monthly-details[open] summary::after { content: '−'; }
+.monthly-details ul { padding-left: 18px; font-size: 12px; line-height: 1.9; color: var(--muted); }
+.monthly-history-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; }
+.monthly-history-row > div { min-width: 0; }
+.monthly-history-row strong { display: block; font-size: 12px; }
+.monthly-history-row small { display: block; font-size: 10px; color: var(--muted); }
+.monthly-calendar { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); gap: 5px; padding: 0; margin: 18px 0; list-style: none; }
+.monthly-calendar li { padding: 7px 1px; background: #faf7f9; border-radius: 7px; text-align: center; }
+.monthly-calendar li > span:not(.sr-only) { font-size: 9px; color: #777080; }
+.monthly-calendar li > div { display: flex; gap: 3px; justify-content: center; margin-top: 6px; }
+.monthly-calendar i { display: inline-grid; place-items: center; width: 13px; height: 13px; border: 1px dashed #bcb4c2; border-radius: 50%; color: #85758c; font-style: normal; font-size: 10px; }
+.monthly-calendar i.checked { background: #f04e82; border-color: #f04e82; color: white; }
+.monthly-feedback { background: #f7f8fb; border-radius: 9px; padding: 15px; }
+.monthly-feedback p { margin-bottom: 0; }
+.monthly-balance { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; padding: 15px 0; }
+.monthly-balance strong { color: #c72c60; }
+.monthly-expenses > button { display: flex; align-items: center; gap: 10px; width: 100%; border: 0; border-bottom: 1px solid var(--line); background: transparent; text-align: left; padding: 15px 0; }
+.monthly-expenses > button > span { min-width: 0; flex: 1; }
+.monthly-expenses strong { font-size: 13px; display: block; overflow-wrap: anywhere; }
+.monthly-expenses small { display: block; font-size: 10px; color: var(--muted); margin-top: 5px; }
+.monthly-expenses b { font-size: 12px; white-space: nowrap; }
+.monthly-expenses .icon { width: 12px; height: 12px; }
+.monthly-next { background: #fff5f9; border-color: #f2d8e4; }
+.monthly-actions { display: grid; gap: 12px; }
+.monthly-actions article { padding: 16px; border: 1px solid #f1e1e9; background: white; border-radius: 10px; }
+.monthly-actions small { display: block; font-size: 10px; color: #90647b; }
+.monthly-actions .text-link { font-size: 11px; }
+.monthly-plan-summary { display: flex; flex-direction: column; gap: 7px; margin: 22px 0 10px; font-size: 11px; color: #726174; }
+.monthly-plan-summary > strong { font-size: 32px; color: #18243a; }
+.monthly-next > .btn { margin-top: 16px; }
+.monthly-method { margin-top: 0; padding: 0 3px; }
+.monthly-method p { font-size: 11px; line-height: 1.9; color: var(--muted); }
+.monthly-method a { color: #ad325c; font-size: 11px; }
+.monthly-home { display: flex; gap: 12px; margin: 20px 0; padding: 18px 15px; background: #fff4f8; border: 1px solid #f2dce5; border-radius: 13px; }
+.monthly-home h2 { font-size: 16px; }
+.monthly-home p { margin: 7px 0 0; font-size: 11px; color: var(--muted); line-height: 1.8; }
+.monthly-home .tip-icon { flex-shrink: 0; }
+.record-tabs { overflow-x: auto; }
+.record-tabs button { flex-shrink: 0; white-space: nowrap; }
+@media (max-width: 360px) {
+  .monthly-metrics { grid-template-columns: 1fr; }
+  .monthly-metrics article { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 5px 10px; padding: 13px; }
+  .monthly-metrics article > strong { grid-column: 2; grid-row: 1 / 3; align-self: center; font-size: 21px; }
+  .monthly-metrics article > small { grid-column: 1; }
+  .monthly-card { padding: 18px 13px; }
+  .monthly-table { font-size: 11px; }
+}

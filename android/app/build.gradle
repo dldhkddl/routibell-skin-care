@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+def nativeKey = System.getenv('KAKAO_NATIVE_APP_KEY') ?: ''
+def environmentFile = rootProject.file('../.env')
+if (!nativeKey && environmentFile.exists()) {
+    def entry = environmentFile.readLines('UTF-8').find { it.trim().startsWith('KAKAO_NATIVE_APP_KEY=') }
+    if (entry) nativeKey = entry.substring(entry.indexOf('=') + 1).trim().replaceAll(/^['"]|['"]$/, '')
+}
+if (nativeKey && !(nativeKey ==~ /[A-Za-z0-9]+/)) throw new GradleException('카카오 네이티브 앱 키 형식을 확인해 주세요.')
+
+android {
+    buildFeatures { buildConfig true }
+    namespace = "com.dldhkddl.skincare"
+    defaultConfig { manifestPlaceholders = [kakaoScheme: nativeKey ? "kakao${nativeKey}" : 'kakao-unconfigured'] }
+    compileSdk = rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.dldhkddl.skincare"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+        buildConfigField 'String', 'KAKAO_NATIVE_APP_KEY', "\"${nativeKey}\""
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation 'com.kakao.sdk:v2-user:2.25.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    implementation project(':capacitor-android')
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation project(':capacitor-cordova-android-plugins')
+}
+
+apply from: 'capacitor.build.gradle'
+
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}

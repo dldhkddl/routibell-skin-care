@@ -1,0 +1,29 @@
+:root{font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;color:#172239;background:#fff8fb;font-synthesis:none;line-height:1.65}
+*{box-sizing:border-box}
+body{margin:0}
+main{width:min(100%,680px);padding:44px 22px 60px;margin:auto}
+.eyebrow{color:#e63067;font-size:12px;font-weight:700;letter-spacing:.12em}
+h1{font-size:clamp(27px,5vw,37px);line-height:1.35;letter-spacing:-.04em;margin:14px 0}
+h2{font-size:18px;margin:0 0 14px}
+.lead{color:#5c6578;margin-bottom:30px}
+section{background:white;border:1px solid #f2dfe6;border-radius:20px;padding:23px;margin-top:17px;box-shadow:0 7px 24px #51243a05}
+dl{margin:0}
+dl>div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #f4edf0}
+dt{color:#637084}
+dd{margin:0;font-weight:700;text-align:right}
+.note,.footer{font-size:12px;color:#667184}
+.footer{margin-top:26px}
+ol{padding-left:21px;font-size:14px}
+li{margin:9px 0}
+button{border:0;border-radius:12px;background:#eb356b;color:white;font:inherit;font-size:14px;font-weight:700;padding:13px 18px;width:100%;cursor:pointer;min-height:46px}
+button.secondary{background:#fff0f5;color:#ac204a;margin-top:8px}
+button:disabled{opacity:.5;cursor:not-allowed}
+button:focus-visible,input:focus-visible{outline:3px solid #152a54;outline-offset:3px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;margin:20px 0;cursor:pointer}
+input[type=checkbox]{accent-color:#eb356b;flex-shrink:0;width:18px;height:18px;margin-top:3px}
+#message{font-size:14px;font-weight:700;overflow-wrap:anywhere}
+.cost{padding:14px 0;border-top:1px solid #f0e7eb;overflow-wrap:anywhere}
+.cost h3{font-size:14px;margin:0 0 6px}
+.cost p{font-size:13px;margin:5px 0}
+.error{color:#a42042}
+@media(max-width:380px){main{padding:25px 14px}section{padding:18px}dl>div{font-size:13px}}

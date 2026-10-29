@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>핵심 흐름 · 격리 검증</title>
+  <style>#core-test {max-width:440px;margin:12px auto;padding:16px;background:#fff0f6;box-sizing:border-box;font-size:13px} #core-test h1{font-size:18px} #core-test button{padding:8px;margin:4px;border:1px solid #eea7bc;border-radius:8px;background:white} #core-test label{display:block;margin:8px 0} #core-test-output{display:block;overflow-wrap:anywhere} html.core-narrow body{max-width:320px;margin:auto} html.core-narrow .bottom-nav{max-width:320px}</style>
+</head>
+<body>
+  <aside id="core-test"><h1>실제 앱 · 격리 검증</h1><p>별도 저장 공간의 시험 자료입니다. 사용자 기록 접근·유캠 통신은 차단합니다.</p><button id="core-empty">빈 기록으로 시작</button><button id="core-month">한 달 경계 검증 자료 불러오기</button><button id="core-reload">새로고침</button><button id="core-width">320px 화면 전환</button><label><input type="checkbox" id="core-failure"> 저장 실패 모의</label><output id="core-test-output" aria-live="polite"></output></aside>
+  <div id="app"><p class="loading">격리 앱을 준비하고 있어요.</p></div>
+  <dialog id="editor" aria-labelledby="dialog-title"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./핵심흐름.js"></script>
+</body>
+</html>

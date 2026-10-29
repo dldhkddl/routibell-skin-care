@@ -1,0 +1,116 @@
+.checkin-chat { max-width: 540px; margin: 0 auto; padding-bottom: 24px; }
+.checkin-chat-head { display: flex; align-items: center; gap: 10px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.checkin-avatar { display: inline-flex; width: 42px; height: 42px; align-items: center; justify-content: center; border-radius: 16px; background: var(--lavender); color: var(--pink); flex: 0 0 auto; }
+.checkin-avatar-button { border: 0; cursor: pointer; }
+.checkin-chat-head strong, .checkin-chat-head span:not(.checkin-avatar) { display: block; }
+.checkin-chat-head div > span { color: var(--muted); font-size: 11px; margin-top: 3px; }
+.checkin-chat-head time { margin-left: auto; white-space: nowrap; font-size: 12px; color: var(--muted); }
+.checkin-intro, .checkin-existing { margin: 15px 0; color: var(--muted); font-size: 13px; }
+.checkin-existing { padding: 10px 12px; border-radius: 12px; background: #f7f8fa; }
+.checkin-transcript { display: grid; gap: 18px; margin-top: 24px; }
+.checkin-bubble { max-width: 92%; padding: 14px 16px; border-radius: 18px; margin: 0; font-size: 14px; overflow-wrap: anywhere; }
+.checkin-bubble.bot { background: #f5f6f8; border-bottom-left-radius: 5px; }
+.checkin-reply { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; margin-top: 10px; }
+.checkin-bubble.user { background: #fff0f5; color: #9c2349; border-bottom-right-radius: 5px; }
+.checkin-edit { background: transparent; border: 0; padding: 6px 10px; min-height: 32px; color: var(--muted); font-size: 12px; }
+.checkin-current { margin-top: 24px; padding: 20px 16px; border: 1px solid #ffd3e0; border-radius: 20px; background: #fffbfc; }
+.checkin-current h2, .checkin-finish h2 { font-size: 19px; line-height: 1.5; margin: 0 0 14px; }
+.checkin-question-count { color: #ae385d; font-size: 11px; margin-bottom: 7px; }
+.checkin-options { display: grid; gap: 9px; }
+.checkin-options button { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 48px; padding: 12px 14px; background: #fff; border: 1px solid #e8dfe3; border-radius: 13px; text-align: left; font-weight: 600; font-size: 14px; overflow-wrap: anywhere; }
+.checkin-options button:hover { border-color: var(--pink); background: #fff6f9; }
+.checkin-options:has([data-checkin="quick-adherence"]) { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.checkin-options .checkin-preferred { border-color: #df7b9b; background: #fff6f9; }
+.checkin-options button small { margin-left: auto; color: #9d4e68; font-size: 11px; }
+.checkin-options .icon { width: 16px; height: 16px; color: #b78596; }
+.checkin-help { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.checkin-summary { margin: 0 0 18px; }
+.checkin-summary > div { display: grid; grid-template-columns: 98px minmax(0, 1fr); gap: 10px; padding: 10px 0; border-bottom: 1px solid #f1e5e9; font-size: 13px; }
+.checkin-summary dt { color: var(--muted); }
+.checkin-summary dd { margin: 0; text-align: right; font-weight: 600; overflow-wrap: anywhere; }
+.checkin-finish { margin-top: 24px; max-width: 100%; padding: 22px 18px; }
+.checkin-success { color: #a1274d; display: inline-flex; align-items: center; gap: 7px; margin-bottom: 15px; font-size: 13px; }
+.checkin-finish-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.checkin-finish-actions .btn { flex: 1; }
+.checkin-error { margin-top: 16px; }
+.checkin-empty { padding: 28px 16px; border: 1px solid var(--line); border-radius: 20px; }
+.checkin-empty h2 { margin: 16px 0 10px; }
+.checkin-character { display: block; width: 42px; height: 42px; flex: 0 0 auto; }
+.checkin-home { margin: 0 0 22px; padding: 18px; border: 1px solid #ffd3e0; border-radius: 22px; background: linear-gradient(140deg, #fff6f9, #fff); }
+.checkin-compact { padding: 0; }
+.checkin-compact .checkin-chat-head { padding: 0; border: 0; }
+.checkin-compact .checkin-chat-head strong { font-size: 13px; font-weight: 600; color: #8e455d; }
+.checkin-compact .checkin-chat-head .checkin-memory { color: #34435a; line-height: 1.45; }
+.checkin-compact .checkin-chat-head div > span { font-size: 11px; }
+.checkin-compact .checkin-current { margin: 16px 0 0; padding: 0; border: 0; border-radius: 0; background: none; }
+.checkin-compact .checkin-current h2 { font-size: 19px; margin-bottom: 14px; letter-spacing: -.5px; }
+.checkin-compact .checkin-question-count { margin: 0 0 5px; }
+.checkin-compact .checkin-options:has([data-key="adherence"]) { grid-template-columns: 1fr 1.35fr 1fr; gap: 6px; }
+.checkin-compact [data-key="adherence"] { justify-content: center; padding: 11px 4px; font-size: 12px; gap: 0; }
+.checkin-compact [data-key="adherence"] .icon { display: none; }
+.checkin-answers { margin-top: 15px; font-size: 12px; color: var(--muted); }
+.checkin-answers > summary { cursor: pointer; padding: 8px 0; }
+.checkin-answers .checkin-transcript { margin-top: 12px; }
+.checkin-answers .checkin-bubble { font-size: 12px; padding: 10px 12px; }
+.checkin-done { display: flex; align-items: center; gap: 10px; padding: 10px 13px; }
+.checkin-done .checkin-avatar, .checkin-done .checkin-character { width: 32px; height: 32px; }
+.checkin-done strong { display: flex; align-items: center; gap: 7px; font-size: 14px; }
+.checkin-done strong .icon { width: 17px; height: 17px; color: var(--pink); }
+.checkin-done .checkin-edit { margin-left: auto; min-height: 44px; color: #a12b52; }
+.checkin-launcher { position: fixed; z-index: 6; right: max(16px, calc((100vw - 440px) / 2 + 16px)); bottom: calc(94px + env(safe-area-inset-bottom)); width: 56px; height: 56px; display: grid; place-items: center; border: 1px solid #ffd3e0; border-radius: 20px; background: #fff; box-shadow: 0 4px 18px #60223920; }
+.checkin-launcher:hover { background: #fff6f9; }
+body:has(#checkin-launcher) .main-content { padding-bottom: calc(195px + env(safe-area-inset-bottom)); }
+body:has(#editor[open]) #checkin-launcher { display: none; }
+body:has(#checkin-launcher) #toast { bottom: calc(163px + env(safe-area-inset-bottom)); }
+.checkin-extra { margin-top: 14px; color: var(--muted); font-size: 13px; }
+.checkin-extra summary { cursor: pointer; width: max-content; padding: 8px 0; }
+.checkin-extra-options { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px; }
+.checkin-extra-options button { border: 1px solid #e8dfe3; border-radius: 20px; padding: 8px 11px; background: #fff; color: #34435a; }
+.checkin-extra-options button[aria-pressed="true"] { border-color: #df7b9b; background: #fff0f5; }
+.checkin-unread { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; border: 2px solid #fff; border-radius: 50%; background: var(--pink); }
+body.checkin-sheet-open { overflow: hidden; }
+dialog.checkin-sheet { position: fixed; inset: auto 0 0; box-sizing: border-box; width: min(440px, 100%); max-width: 100%; max-height: calc(90dvh - env(safe-area-inset-top)); margin: 0 auto; padding: 8px 22px max(24px, env(safe-area-inset-bottom)); border: 0; border-radius: 26px 26px 0 0; overscroll-behavior: contain; }
+.checkin-sheet::before { content: ''; display: block; width: 34px; height: 4px; margin: 0 auto 8px; border-radius: 8px; background: #e6dbe0; }
+.checkin-sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 15px; }
+.checkin-sheet-head h2 { margin: 0; font-size: 15px; }
+.checkin-completion { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border-radius: 18px; background: #fff7fa; }
+.checkin-completion > div { min-width: 0; }
+.checkin-completion strong { display: block; color: #263348; line-height: 1.5; }
+.checkin-completion p { margin: 7px 0 12px; color: #5f6675; font-size: 13px; line-height: 1.5; }
+.checkin-completion .btn { margin-top: 10px; }
+.checkin-completion .checkin-edit { display: block; margin-top: 7px; padding-left: 0; }
+.checkin-completion-home { width: 100%; background: transparent; padding: 8px; }
+.manager-sheet h3 { margin: 20px 0 9px; font-size: 14px; }
+.manager-first { margin: 8px 0 16px; font-size: 16px; font-weight: 700; line-height: 1.5; }
+.manager-tasks, .manager-quick { display: grid; gap: 8px; }
+.manager-tasks button, .manager-quick button, .manager-date-choice button { min-height: 46px; padding: 10px 14px; text-align: left; border: 1px solid #efdce3; border-radius: 12px; background: #fff; color: #273248; }
+.manager-tasks button { display: flex; justify-content: space-between; align-items: center; }
+.manager-tasks button svg, .checkin-sheet-head button svg { width: 18px; height: 18px; flex: none; }
+.manager-quick { grid-template-columns: 1fr 1fr; }
+.manager-quick button { font-size: 12px; }
+.manager-soon { color: #858995; font-size: 13px; }
+.manager-recommended, .manager-question-list { display: grid; gap: 7px; }
+.manager-recommended button, .manager-question-list button { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 45px; padding: 10px 12px; border: 1px solid #efdce3; border-radius: 12px; background: #fff; color: #273248; text-align: left; font-size: 13px; }
+.manager-recommended button { background: #fff6f9; }
+.manager-recommended svg, .manager-question-list svg { width: 16px; height: 16px; flex: none; }
+.manager-question-tabs { display: flex; gap: 5px; margin: 15px 0 10px; overflow-x: auto; }
+.manager-question-tabs button { flex: 0 0 auto; min-height: 39px; padding: 8px 10px; border: 1px solid #e9dce1; border-radius: 20px; background: #fff; color: #5d6779; font-size: 12px; }
+.manager-question-tabs button[aria-selected="true"] { border-color: #eaa9bf; background: #fff0f5; color: #9c2349; }
+.manager-answer { padding: 4px 0 12px; }
+.manager-answer h3 { margin: 20px 0 16px; font-size: 19px; }
+.manager-answer-lines { display: grid; gap: 10px; margin-bottom: 20px; }
+.manager-answer-lines p { margin: 0; line-height: 1.55; font-size: 14px; }
+.manager-back { padding: 8px 0; min-height: 38px; border: 0; background: transparent; color: #6b7180; font-size: 13px; }
+.manager-date-choice { display: flex; flex-wrap: wrap; gap: 8px; }
+.manager-date-choice p { width: 100%; }
+.checkin-sheet-head .icon-button { width: 44px; height: 44px; }
+.checkin-home :focus-visible, .checkin-sheet :focus-visible, .checkin-launcher:focus-visible { outline: 2px solid #ae315b; outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+  .checkin-sheet[open] { animation: checkin-sheet-appear .2s ease-out; }
+  @keyframes checkin-sheet-appear { from { transform: translateY(28px); opacity: .5; } to { transform: translateY(0); opacity: 1; } }
+  .checkin-current, .checkin-finish { animation: checkin-appear .18s ease-out; }
+  @keyframes checkin-appear { from { opacity: .5; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+}
+.reminder-panel h2 { margin-top: 0; font-size: 18px; }
+.reminder-panel details { margin: 12px 0; color: var(--muted); font-size: 12px; }
+.reminder-panel input[type="time"] { max-width: 180px; }

@@ -1,0 +1,7 @@
+@import './글꼴.css';
+@import './개인정보방침.css';
+body{margin:0;min-width:280px;background:#fff7fa;font-family:'Pretendard Variable','Malgun Gothic',sans-serif}
+button,input{font:inherit}
+a{color:#bb2c60}
+.privacy-policy{min-height:100dvh;box-sizing:border-box}
+.privacy-policy a.btn{display:inline-block;padding:12px 18px;border:1px solid #e5c4d0;border-radius:12px;text-decoration:none}

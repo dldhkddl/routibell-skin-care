@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>뷰티 포트폴리오 전체 화면</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 36px 24px; font-family: 'Noto Sans KR','Malgun Gothic',sans-serif; color: #17243b; background: #f3f4f7; }
+    header { max-width: 1240px; margin: 0 auto 25px; }
+    h1 { font-size: 27px; margin: 0 0 12px; }
+    p { color: #64758e; line-height: 1.8; font-size: 13px; }
+    a { color: #ca2d5c; text-decoration: none; }
+    .screens { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,360px),1fr)); max-width: 1240px; gap: 28px; margin: auto; }
+    article { min-width: 0; }
+    h2 { display: flex; justify-content: space-between; gap: 12px; margin: 0 0 12px; font-size: 16px; }
+    h2 a { font-size: 12px; font-weight: 400; }
+    iframe { width: 100%; height: 870px; border: 1px solid #e1e5ec; border-radius: 18px; background: white; }
+    .note { border-left: 3px solid #ff5283; padding-left: 14px; }
+  </style>
+</head>
+<body>
+  <header><h1>나를 위한 뷰티 포트폴리오</h1><p>목표 화면에서 확인한 사진·글꼴·색상 기준을 전체 화면으로 확장했습니다.</p><p class="note">각 창은 실제 앱입니다. 저장하면 현재 기기의 기록이 바뀝니다.<br>예시 데이터를 보려면 각 화면 상단의 ‘샘플 둘러보기’를 눌러주세요. AI 분석·가상체험은 준비 중 안내만 제공합니다.</p><a href="/검증/목표비교.html">제공 목업과 목표 화면 비교 →</a></header>
+  <main class="screens">
+    <article><h2>NEW. 상태·제품 → 오늘 관리 <a href="/#care" target="_blank" rel="noopener">크게 보기 ↗</a></h2><iframe src="/#care" title="피부 상태와 기본 관리 계획" loading="lazy"></iframe></article>
+    <article><h2>01. 시작하기 <a href="/#welcome" target="_blank" rel="noopener">크게 보기 ↗</a></h2><iframe src="/#welcome" title="시작 화면" loading="lazy"></iframe></article>
+    <article><h2>02. 목표 설정 <a href="/#goals" target="_blank" rel="noopener">크게 보기 ↗</a></h2><iframe src="/#goals" title="목표 설정" loading="lazy"></iframe></article>
+    <article><h2>03. 내 포트폴리오 <a href="/#home" target="_blank" rel="noopener">크게 보기 ↗</a></h2><iframe src="/#home" title="포트폴리오 홈" loading="lazy"></iframe></article>
+    <article><h2>04. 예산·배분·보유 제품 <a href="/#life" target="_blank" rel="noopener">크게 보기 ↗</a></h2><iframe src="/#life" title="뷰티 계획" loading="lazy"></iframe></article>
+    <article><h2>05. 제품 비교 <a href="/#wishes" target="_blank" rel="noopener">크게 보기 ↗</a></h2><iframe src="/#wishes" title="제품 비교" loading="lazy"></iframe></article>
+    <article><h2>06. 관리·소비 기록 <a href="/#records" target="_blank" rel="noopener">크게 보기 ↗</a></h2><iframe src="/#records" title="관리 기록과 주간 비교" loading="lazy"></iframe></article>
+    <article><h2>07. 기록 안의 소비 리뷰 <a href="/#review" target="_blank" rel="noopener">크게 보기 ↗</a></h2><iframe src="/#review" title="소비 리포트" loading="lazy"></iframe></article>
+    <article><h2>08. 마이 포트폴리오 <a href="/#settings" target="_blank" rel="noopener">크게 보기 ↗</a></h2><iframe src="/#settings" title="마이 포트폴리오" loading="lazy"></iframe></article>
+    <article><h2>09. AI 기능 안내 <a href="/#preview" target="_blank" rel="noopener">크게 보기 ↗</a></h2><iframe src="/#preview" title="AI 기능 준비 중 안내" loading="lazy"></iframe></article>
+  </main>
+</body>
+</html>

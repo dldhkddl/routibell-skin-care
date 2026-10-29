@@ -1,0 +1,18 @@
+.subscription-page{display:grid;gap:16px;padding:8px 0 32px;color:#17243b}
+.subscription-page h2{margin:0;font-size:26px;line-height:1.3}
+.subscription-page h3{margin:0;font-size:18px}
+.subscription-plans strong{font-size:24px;color:#17243b}
+.subscription-page p{margin:0;line-height:1.5}
+.subscription-current{color:#d93368;font-weight:700}
+.subscription-plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.subscription-plans article{display:flex;flex-direction:column;gap:10px;min-width:0;padding:18px 12px;border:1px solid #e5dce2;border-radius:17px;background:#fff}
+.subscription-plans article p{font-size:14px}
+.subscription-coming{margin-top:auto;color:#66738a;font-size:12px}
+.subscription-plans [data-payment-interest]{width:100%;min-width:0;white-space:nowrap;padding-inline:6px}
+.subscription-plans .subscription-plus{border-color:#f29bb4;background:#fff5f8}
+.subscription-plus strong{font-size:24px;color:#d93368}
+.subscription-note,.subscription-pending,.subscription-until,.subscription-free{font-size:14px;color:#617087}
+.subscription-terms{padding:12px 14px;border:1px solid #e5dce2;border-radius:13px;background:#fff}
+.subscription-terms summary{cursor:pointer;font-weight:700}
+.subscription-terms p{margin-top:10px;font-size:14px;color:#52627d}
+@media(max-width:370px){.subscription-plans{grid-template-columns:1fr}}
